@@ -1,9 +1,9 @@
 
 html,body{
 
-	padding: 0;
-	margin: 0;
-	height: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
 }
 
 #inputContainer *{
@@ -12,8 +12,11 @@ html,body{
     font-weight: normal;
     color: #fff;
     line-height: 1em;
-     padding: 2px;
-}
+    padding: 2px;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+ }
 
 #inputContainer {
 
@@ -23,7 +26,7 @@ html,body{
 }
 
 #inputContainer button{
-	 font-size: 16px;
+     font-size: 16px;
     padding: 4px;
     border: 1px solid #fff;
     align-content: center;
@@ -38,11 +41,11 @@ html,body{
 }
 
 #inputContainer button:hover{
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #inputContainer h2{
-  	text-align: center;
+    text-align: center;
 }
 
 #inputContainer input[type="text"], input[type="date"]{
@@ -70,9 +73,7 @@ html,body{
 
     
 #inputContainer label{
-	color: #fff;
+    color: #fff;
     font-size: 17px;
-    margin-left: 20px;
-}
-
+   }
 
