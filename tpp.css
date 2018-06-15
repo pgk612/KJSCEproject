@@ -12,6 +12,8 @@ html,body{
     color: #fff;
     line-height: 1em;
      padding: 2px;
+         display: block;
+         margin-left: 15px;
 }
 
 #inputContainer {
@@ -72,6 +74,7 @@ html,body{
 	color: #fff;
     font-size: 17px;
     margin-left: 20px;
+   
 }
 
 
