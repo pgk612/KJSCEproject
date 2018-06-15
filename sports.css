@@ -17,7 +17,11 @@ html,body{
 #inputContainer {
 
     margin-left: 300px;
+
+    margin-top: -16px;
+
     margin-top: 300px;
+
     width: 30%;
 }
 
