@@ -41,9 +41,9 @@
 
 <div class="container1">
 <center>
-<u><h2>Enter Sports Details</h2></u>
+<u><h2>Enter Course Details</h2></u>
 
-   <form action="php/ins_sports.php" method="POST">
+  <form action="php/ins_courses.php" method="POST">
 <table>
   
   <tr>
@@ -51,24 +51,14 @@
     <td><input type="text" name="rollno"  placeholder="Eg: 1511020" required></td>
   </tr>
   <tr>
-    <td>Tournament Name:</td>
-    <td><input type="text" name="tour_name" placeholder="Eg: Skream" required></td>
+    <td>Course Name:</td>
+    <td><input type="text" name="name_c" placeholder="Eg: C++" required></td>
   </tr>
 <tr>
-    <td>Place:</td>
-    <td><input type="text" name="place" placeholder="Eg: KJSCE,Mumbai" required></td>
+    <td>Completed From:</td>
+    <td><input type="text" name="insti" placeholder="Eg: Oracle" required></td>
   </tr>
 <tr>
-    <td>Position:</td>
-    <td><select name="position"  required>
-      
-    <option value="participant">Participant</option>
-    <option value="First">First</option>
-    <option value="Second">Second</option>
-    <option value="Third">Third</option>
-  </select></td>
-  </tr>
-  <tr>
     <td>Start Date:</td>
     <td><input type="date" name="start_date"  required></td>
   </tr>
@@ -78,7 +68,7 @@
   </tr>
 <tr>
     <td>Attach Certificate:</td>
-    <td><input type="file" name="certi" required></td>
+    <td><input type="file" name="certi"  required></td>
   </tr>
 </table>
 <br><br>    
@@ -87,6 +77,7 @@
 </center>
 
     </div>
+
 </div>
 
 </body>
