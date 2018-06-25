@@ -39,6 +39,7 @@ font-family: Arial;
 .dropdown {
     float: left;
     overflow: hidden;
+
 	}
 
 .dropdown .dropbtn {
@@ -46,7 +47,7 @@ font-family: Arial;
     border: none;
     outline: none;
     color: black;
-    padding: 14px 16px;
+    padding: 10px 16px;
     background-color: inherit;
 font-family: Arial;
 }
@@ -87,7 +88,7 @@ font-family: Arial;
     width: 200px;
     position: fixed;
     z-index: 1;
-    top: 182px;
+    top: 174px;
     left: 8.15px;
     background-color: #F9F4DA;
     overflow-x: hidden;
@@ -169,3 +170,26 @@ table {
 color:black;
 }
 
+.clock
+{
+padding-left:1150px;
+
+}
+    .fa_custom{
+      
+      color:#002664;
+
+    }
+
+  .container2 {
+    margin-top: -37px;
+    border-radius: 5px;
+    background-color: #F9F4DA;
+    margin-left: 230px;
+    width: 1066px;
+    text-align: left;
+    height: 500px;
+    padding: 15px;
+    border: 3px solid black;
+    color: black;
+}
