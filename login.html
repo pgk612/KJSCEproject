@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="design_forms.css"> 
+
+</head>
+<body style="background-color:#002664;">
+
+<div class="flex-container">
+<header>
+  <h1>Somaiya Vidyavihar</h1>
+
+</header>
+
+<div class="container">
+  
+  <a href="home.html">Home</a>
+  <div class="dropdown">
+      <b> <button class="dropbtn">Login</button></b>
+    <div class="dropdown-content">
+      <a href="login.html">Student</a>
+      <hr><a href="admin.html">Faculty</a></hr>
+      
+</div>
+  </div>
+ <a href="report.html">Report</a>
+ <a href="contact.html">Contact Us</a>
+</div>
+</div>
+
+<div class="sidenav">
+    
+
+   <a class ="report" href="home.html">Report</a>
+  <hr><a href="php/bef_log/view_workshop.php">Workshops</a></hr>
+  <hr><a href="php/bef_log/view_courses.php">Courses</a></hr>
+  <hr><a href="php/bef_log/view_tpp.php">TPP</a></hr>
+  <hr><a href="php/bef_log/view_sports.php">Sports</a></hr>
+  <hr><a href="php/bef_log/view_competitions.php">Competitions</a></hr>
+<hr><a href="php/bef_log/view_otheractivity.php">Other Activities</a></hr>
+
+  </div>
+<br><br>
+<div class="container3">
+<center>
+<u><h2>LOGIN USING SOMAIYA CREDENTIALS</h2></u>
+
+  <form action="php/login.php" method="POST">
+<table>
+  
+  <tr>
+    <td>Username:</td>
+    <td><input type="text" name="uname"  placeholder="SVV id" required></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><input type="text" name="pword" placeholder="SVV password" required></td>
+  </tr>
+
+</table>
+<br><br>    
+<input type="submit" value="Submit">
+</form>
+</center>
+
+    </div>
+
+</body>
+
+</html>

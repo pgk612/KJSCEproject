@@ -1,0 +1,14 @@
+comments
+
+<div class="search1">
+ 
+  
+
+  Search By Date :   From<input type="date" name="search" placeholder="Search.."> 
+  <br>
+
+<div  class="to"> To <input type="date" name="search" placeholder="Search.."> </div>
+  </div>
+  <center>
+<br><br><br>
+<button >Search</button>

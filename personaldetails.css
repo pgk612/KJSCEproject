@@ -1,0 +1,29 @@
+.personaldetails
+{
+        border: 2px solid black;
+            width: 896px;
+
+
+}
+
+table th{
+	    border: 1px solid;
+    /* padding: 5px; */
+    /* align-items: flex-start; */
+    /* align-content: flex-start; */
+    margin-left: 14px;
+    padding-right: 41px;
+    padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 4px;
+        text-align: left;
+
+
+}
+table td{
+
+
+	width: 100%;
+    border: 1px solid black;
+    padding-left: 15px;
+}
