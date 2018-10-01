@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="design_forms.css"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body style="background-color:#002664;">
+
+<div class="flex-container">
+<header>
+  <h1><img   height="85" width="90" src="assets/logo1.png">
+
+  Somaiya Vidyavihar
+<img   height="85" width="90" src="assets/logo2.png"></h1>
+
+</header>
+
+<div class="container">
+  
+  <a href="index.html">Home</a>
+  <div class="dropdown">
+      <b> <button class="dropbtn">Login <i class="fa fa-caret-down"></i></button></b>
+    <div class="dropdown-content">
+      <a href="login.html">Student</a>
+      <hr><a href="admin.html">Admin</a></hr>
+      
+</div>
+  </div>
+ <a href="null_analysis.php">Analysis</a>
+ <a href="contact.html">Contact Us</a>
+</div>
+</div>
+
+<div class="sidenav">
+    
+
+   <a class ="report" href="#">Report <i class="fa fa-caret-down"></i></a>
+  <hr><a href="php/bef_log/view_workshop.php">Workshops</a></hr>
+  <hr><a href="php/bef_log/view_courses.php">Courses</a></hr>
+  <hr><a href="php/bef_log/view_tpp.php">TPP</a></hr>
+  <hr><a href="php/bef_log/view_sports.php">Sports</a></hr>
+  <hr><a href="php/bef_log/view_competitions.php">Competitions</a></hr>
+<hr><a href="php/bef_log/view_otheractivity.php">Other Activities</a></hr>
+
+  </div>
+<br><br>
+<div class="container3">
+<center>
+  <fieldset>
+
+    <legend><u>Login For First Time</u></legend>
+
+  <form action="php/login.php" method="POST">
+   <span style="color: white; font-size: 30px;">Student</span>
+    <table>
+
+  <tr>
+    <td>SVV Id:</td>
+    <td><input type="text" name="svvid" placeholder="SVV ID: rakesh.sharma" required></td>
+  </tr>
+
+
+
+</table>
+<br><br>    
+<input type="submit" value="Send Mail For Password">
+<br><br>    
+
+<a style="color: white; font-size:30;" href="registered_user.html">Already recovered password? Login Here</a>
+</form>
+</fieldset>
+
+</center>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "kjsce";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+
+mysqli_select_db($conn,"kjsce") or die("Connection Failed");
+   
+?>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="../../design_forms.css"> 
+<link rel="stylesheet" type="text/css" href="../../displayData.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body style="background-color:#002664;">
+
+<div class="flex-container">
+<header>
+   <h1>
+<img   height="85" width="90" src="../../assets/logo1.png">
+
+  Somaiya Vidyavihar
+<img   height="85" width="90" src="../../assets/logo2.png">
+  </h1>
+</header>
+
+<div class="container">
+  <a href="../../admin_index.php">My Account</a>
+  <a href="../report.html">Analysis</a>
+  
+
+ <a href="../contact.html">Contact Us</a>
+<div class="clock">
+    <div class="dropdown">
+    <button class="dropbtn">Hi, <?php echo $_SESSION['username'] ; ?>
+	<i class="fa fa-caret-down"></i>  
+    
+    </button>
+    <div class="dropdown-content">
+      <a href="../../index.html">Log Out</a>
+     
+    </div>
+  </div> 
+   </div>
+
+</div>
+</div>
+
+
+<div class="sidenav">
+   <a class ="report" href="#">Report</a>
+  <hr><a href="view_workshop.php">Workshops</a></hr>
+  <hr><a href="view_courses.php">Courses</a></hr>
+  <hr><a href="view_tpp.php">TPP</a></hr>
+  <hr><a href="view_sports.php">Sports</a></hr>
+  <hr><a href="view_competitions.php">Competitions</a></hr>
+<hr><a href="view_otheractivity.php">Other Activities</a></hr>
+
+  </div>
+ <form action="view_courses.php" method="POST">
+
+  <div class="search1">
+  
+<center><h2>Competition</h2></center>
+
+  Search By Date :   From<input type="date" name="sdate" placeholder="Search.."> 
+  <br>
+
+<div  class="to"> To <input type="date" name="edate" placeholder="Search.."> </div>
+  </div>
+<br><br><br><br><br><br>
+  <center>
+  <input type="submit" name="button"/>
+  </form>
+  </center> 
+  <center>
+
+
+
+<?php
+
+if(isset($_POST['button'])) {
+    $sd=$_POST['sdate'];
+
+$ed=$_POST['edate'];
+$sql = "select * from competition WHERE start_date>='$sd' AND end_date<='$ed'";
+
+      }
+   
+      else{
+        $sql = "select * from competition";
+      }
+$result=mysqli_query($conn,$sql);
+if ($result->num_rows > 0)
+{  
+  if (isset($_GET['pageno'])) {
+            $pageno = $_GET['pageno'];
+        } else {
+            $pageno = 1;
+        }
+        $no_of_records_per_page = 10;
+        $offset = ($pageno-1) * $no_of_records_per_page;
+$total_pages_sql = "SELECT COUNT(*) FROM course";
+        $result = mysqli_query($conn,$total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+        $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+        $sql = "select * from competition LIMIT $offset, $no_of_records_per_page";
+        $result = mysqli_query($conn,$sql);
+  ?>
+
+  <table style="margin-top:40px" border="3" solid white>
+
+        <tr><th>  <span style='color:#AFA;'> Serial No</th><th>Roll No</th><th>Name of Competition</th><th>Conducted by</th><th>Rank</th><th>Start date</th><th>End date</th><th>Certificate</th> </span></tr>
+
+  <?php
+
+
+while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+    
+
+echo "<tr><td> <span style='color:#AFA;'>  ". $line['serial']."
+</td><td> <span style='color:#AFA;'>  ". $line['rollno']."
+    </td><td>  <span style='color:#AFA;'> ". $line['name_comp']."
+    </td><td>  <span style='color:#AFA;'> ". $line['cond_by']."
+    </td><td>  <span style='color:#AFA;'> ". $line['position']."
+    </td><td>  <span style='color:#AFA;'> ". $line['start_date']." 
+    </td><td>  <span style='color:#AFA;'> ". $line['end_date']." 
+    </td><td>  ";
+
+
+     $fn =$line['filename'];
+     $files= scandir("../../uploads/competition");
+      for($a =2;$a <count($files);$a++){
+
+        if($fn==$files[$a])
+        {
+
+
+        ?>
+
+        <p>
+          <a style='color:#AFA;' href="../../uploads/competition/<?php echo $files[$a] ?>"><?php echo $files[$a] ?></a>
+        </p>
+
+        <?php 
+      }
+
+
+      }
+
+
+         echo "</td></tr>";
+ 
+}
+
+
+?>
+ <br><br>
+        <a href="?pageno=1"><font color="white" size="5"><- First</font></a>
+        
+    &nbsp&nbsp&nbsp&nbsp&nbsp;
+            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>"><font color="white" size="5">Prev</font></a>
+       &nbsp&nbsp&nbsp&nbsp&nbsp;
+       
+            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>"><font color="white" size="5">Next</font></a>
+      &nbsp&nbsp&nbsp&nbsp&nbsp;
+       <a href="?pageno=<?php echo $total_pages; ?>"><font color="white" size="5">Last -></font></a>
+
+    <?php }
+    
+
+else
+{
+  echo "<br><br><br><br><center><style='margin: 1500px 5px 15px 20px'><font size='5'> NO ENTRIES FOUND </font></style></center>";
+}
+$conn->close();
+
+?>
+
+</table>
+
+    
+ <br><br>
+
+
+<button onclick="self.location.href = '../download/download3.php';">Click Here To Download XLS File</button>
+
+  </center>
+
+</body>
+
+</html>
+
