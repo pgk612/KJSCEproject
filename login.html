@@ -2,28 +2,32 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" type="text/css" href="design_forms.css"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body style="background-color:#002664;">
 
 <div class="flex-container">
 <header>
-  <h1>Somaiya Vidyavihar</h1>
+  <h1><img   height="85" width="90" src="assets/logo1.png">
+
+  Somaiya Vidyavihar
+<img   height="85" width="90" src="assets/logo2.png"></h1>
 
 </header>
 
 <div class="container">
   
-  <a href="home.html">Home</a>
+  <a href="index.html">Home</a>
   <div class="dropdown">
-      <b> <button class="dropbtn">Login</button></b>
+      <b> <button class="dropbtn">Login <i class="fa fa-caret-down"></i></button></b>
     <div class="dropdown-content">
       <a href="login.html">Student</a>
-      <hr><a href="admin.html">Faculty</a></hr>
+      <hr><a href="admin.html">Admin</a></hr>
       
 </div>
   </div>
- <a href="report.html">Report</a>
+ <a href="null_analysis.php">Analysis</a>
  <a href="contact.html">Contact Us</a>
 </div>
 </div>
@@ -31,7 +35,7 @@
 <div class="sidenav">
     
 
-   <a class ="report" href="home.html">Report</a>
+   <a class ="report" href="#">Report <i class="fa fa-caret-down"></i></a>
   <hr><a href="php/bef_log/view_workshop.php">Workshops</a></hr>
   <hr><a href="php/bef_log/view_courses.php">Courses</a></hr>
   <hr><a href="php/bef_log/view_tpp.php">TPP</a></hr>
@@ -43,24 +47,30 @@
 <br><br>
 <div class="container3">
 <center>
-<u><h2>LOGIN USING SOMAIYA CREDENTIALS</h2></u>
+  <fieldset>
+
+    <legend><u>Login For First Time</u></legend>
 
   <form action="php/login.php" method="POST">
-<table>
-  
+   <span style="color: white; font-size: 30px;">Student</span>
+    <table>
+
   <tr>
-    <td>Username:</td>
-    <td><input type="text" name="uname"  placeholder="SVV id" required></td>
+    <td>SVV Id:</td>
+    <td><input type="text" name="svvid" placeholder="SVV ID: rakesh.sharma" required></td>
   </tr>
-  <tr>
-    <td>Password:</td>
-    <td><input type="text" name="pword" placeholder="SVV password" required></td>
-  </tr>
+
+
 
 </table>
 <br><br>    
-<input type="submit" value="Submit">
+<input type="submit" value="Send Mail For Password">
+<br><br>    
+
+<a style="color: white; font-size:30;" href="registered_user.html">Already recovered password? Login Here</a>
 </form>
+</fieldset>
+
 </center>
 
     </div>
