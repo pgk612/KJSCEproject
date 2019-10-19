@@ -1,202 +1,330 @@
+<!-- background image not seen -->
 <?php
 session_start();
 require("functions.php");
-   
+ 
 ?>
-
-
-
-<html>
+<!DOCTYPE html>
+<!--
+Template Name: Basend
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html lang="">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" type="text/css" href="design_forms.css"> 
-  <link rel="stylesheet" type="text/css" href="personaldetails.css"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Record Book</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<!-- <script src="layout/scripts/frontend.js"></script> -->
+<style>
 
-
-</head>
-<body style="background-color:#002664;">
-
-<div class="flex-container">
-<header>
-  <h1><img   height="85" width="90" src="assets/logo1.png">
-
-  Somaiya Vidyavihar
-<img   height="85" width="90" src="assets/logo2.png"></h1>
-
-</header>
-
-<div class="container">
+.box{
+	background-color:white;
+  width: 65%;
   
-  <a href="home.php">My Account</a>
-  <a href="student_analysis.php">Analysis</a>
-  <div class="dropdown">
-      <b> <button class="dropbtn">Add New Activity <i class="fa fa-caret-down"></i></button></b>
-    <div class="dropdown-content">
-      <a  style="padding-top: 19px;"  href="workshop.php" >Workshops</a></hr>
-  <hr><a href="course.php">Courses</a></hr>
-  <hr><a href="tpp.php">TPP</a></hr>
-  <hr><a href="sports.php">Sports</a></hr>
-  <hr><a href="competition.php">Competitions</a></hr>
-<hr><a  style="padding-bottom: 19px;" href="other_activity.php">Other Activities</a></hr>
+  margin-top:-410px;
+  margin-left:100px;
+  padding: 10px;
+   height:410px;
+   position:fixed;
 
-      
-</div>
+  
+}
+
+footer{
+
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   #A2B70D
+   text-align: center;
+   height:max-content;
+}
+.accordion {
+ 
+  color: whites;
+  cursor: pointer;
+  padding: 5px;
+  width: 90%;
+margin-left:50px;
+height:50px;
+margin-top:15px;
+  text-align: left;
+  font-size: 20px;
+  transition: 0.4s;
+border-radius:7px;
+    background-color: #150e0e63;
+	
+}
+
+.accordion:hover {
+  background-color: grey; 
+}
+
+.panel {
+	margin-top:7px;
+	margin-left:50px;
+border-radius:7px;
+	
+
+	color:black;
+	width:90%;
+ height:80px;
+  display: none;
+  font-size:17px;
+  background-color: white;
+  overflow: hidden;
+}
+.accordion:after {
+  content: '\2B9F';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-right: 10px;
+}
+
+
+
+</style>
+</head>
+<!-- <canvas id="projector">Your browser does not support the Canvas element. </canvas> -->
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" > 
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+      <h1>
+            <img   class ="logo2"  height="80" width="80" src="images/demo/logo2.png">   
+            <a href="#">Departmental Record Book</a>            <img   class ="logo1"  height="80" width="80" src="images/demo/logo1.png"> 
+          </h1>        </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="home.php">Home</a></li>
+          <li><a class="drop" href="#">Add Activity</a>
+            <ul>
+              <li><a href="workshop.php">Workshop</a></li>
+              <li><a href="course.php">Course</a></li>
+              <li><a href="tpp.php">TPP</a></li>
+              <li><a href="competition.php">Competition</a></li>
+              <li><a href="sports.php">Sports</a></li>
+              <li><a href="other_activity.php">Other Activity</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">View Progress</a>
+            <ul>
+              <li><a href="viewprogress/my_workshop.php">Workshop</a></li>
+              <li><a href="viewprogress/my_course.php">Course</a></li>
+              <li><a href="viewprogress/my_tpp.php">TPP</a></li>
+              <li><a href="viewprogress/my_competition.php">Competition</a></li>
+              <li><a href="viewprogress/my_sports.php">Sports</a></li>
+              <li><a href="viewprogress/my_other.php">Other Activity</a></li>
+            </ul>
+          </li>
+            <li><a class="drop" href="#">Analysis</a>
+            <ul>
+              <li><a href="student_analysis.php">Tabular</a></li>
+              <li><a href="student_graphical.php">Graphical</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Other</a>
+            <ul>
+              <li><a class="drop" href="#">View</a>
+              <ul>
+                  <li><a href="php/view_workshop.php">Workshop</a></li>
+                  <li><a href="php/view_course.php">Course</a></li>
+                  <li><a href="php/view_tpp.php">TPP</a></li>
+                   <li><a href="php/view_competition.php">Competition</a></li>
+                  <li><a href="php/view_sports.php">Sports</a></li>
+                  <li><a href="php/view_otheractivity.php">Other Activity</a></li>
+                </ul>
+                </li>
+            
+           
+              <li><a href="changepass.php">Change Password</a></li>
+              <li><a href="logout.php">Logout</a></li>
+            </ul>
+          </li>
+         
+     
+        </ul>
+      </nav>
+      <!-- ################################################################################################ -->
+    </header>
   </div>
- <a href="viewprogress.php">View Progress</a>
 
- <a href="contact.html">Contact Us</a>
+<div >
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+         
+      
+    </div>
+    <div class="group excerpts">
+   
+      <article style="margin-left: -300px; margin-top:30px;width:400px;height:410px; background-color:#150e0e63;" class="one_third">
+        <div class="hgroup">
+         
+          <br><br>
+
+          <?php 
+  if(isset($_SESSION['username'])){
+
+  $usersData = getUsersData(getId($_SESSION['username']));
+ 
+   
+
+$image= $usersData['rollno']; 
+
+$dir_path = "student_images/";
 
 
 
-
-<div class="clock">
-    <div class="dropdown">
-    <button class="dropbtn">    Hi, 
-    	 <?php echo $_SESSION['username'] ; ?>
-
-
-	<i class="fa fa-caret-down"></i>  
+            echo "<figure><a><img src='$dir_path$image.png' ></a></figure>";
+      
+        }
     
-    </button>
-    <div class="dropdown-content">
-      <a href="changepass.php">Change password</a>
-      <a href="index.html">Log Out</a>
+
+?>
+        <br>
+        <div class="txtwrap">
+		       <h4> Name: <?php if(isset($_SESSION['username'])){ $usersData = getUsersData(getId($_SESSION['username'])); echo $usersData['name']; } ?>
+          </h4>
+		  <br>
+          <h4> Roll No: <?php if(isset($_SESSION['username'])){ $usersData = getUsersData(getId($_SESSION['username'])); echo $usersData['rollno']; } ?></h4>  
+		  <br>
+		  <h4>
+          Semester:
+          <?php 
+             if(isset($_SESSION['username'])){ $usersData = getUsersData(getId($_SESSION['username'])); echo $usersData['sem'];} ?>
+          </h4>
+        </div>
+      
+      </article>
      
     </div>
-  </div> 
-   </div>
-
-
-</div>
-</div>
-
-<div class="sidenav">
-	 <a  class ="report" href="home.php">Report <i class="fa fa-caret-down"></i></a>
-  <hr><a href="php/view_workshop.php">Workshops</a></hr>
-  <hr><a href="php/view_courses.php">Courses</a></hr>
-  <hr><a href="php/view_tpp.php">TPP</a></hr>
-  <hr><a href="php/view_sports.php">Sports</a></hr>
-  <hr><a href="php/view_competitions.php">Competitions</a></hr>
-<hr><a href="php/view_otheractivity.php">Other Activities</a></hr>
-
-
-  </div>
-
-<div class="bd">
-<h2>
-
-
-<div class="container2">
-
 	
-	<br><br>
+  <!--<div class="group excerpts">
+  -->
+	<article style="margin-left: 250px; margin-top:-410px;width:100%;height:410px ;" class="one_third">
+	<button class="accordion">1.  How do I login for the first time?</button>
+<div class="panel">
+  <p>  Click on First Time User/Forgot password and enter your Somaiya ID to get your initial password on your mail-id.After logging in you can 
+    change your password for your account.</p>
+</div>
 
-	<div class ="personaldetails">
-	<table>
-		<tr>
-			<th>NAME      </th>
-			<td>
-				 <?php 
-  if(isset($_SESSION['username'])){
-
- 	$usersData = getUsersData(getId($_SESSION['username']));
- 
-   
-
-echo $usersData['name']; 
-}
-?>
+<button class="accordion">2. Can I view my progress or the activities done by me ?</button>
+<div class="panel">
+  <p>Yes,you can view your progress on clicking on VIEW MY PROGRESS button which will show your uploaded activities and 
+    details under various categories.You can also delete an entry in case you dont want the entry to be there.</p>
+</div>
 
 
-
-			 </td>
-		</tr>
-		<tr>
-			<th>ID NO</th>
-			<td>
-				 <?php 
-  if(isset($_SESSION['username'])){
-
- 	$usersData = getUsersData(getId($_SESSION['username']));
- 
-   
-
-echo $usersData['idno']; 
-}
-?>
+<button class="accordion"> 3. How do I add an activity?</button>
+<div class="panel">
+  <p> You can simply add an activity by clicking on ADD NEW ACTIVITY which will show various categories of activities
+   you can upload.Just click on any category,add details accordingly and press submit.</p>
+</div>
 
 
+<button class="accordion"> 4. Do I need a proof for the  activity I upload?</button>
+<div class="panel">
+  <p> Yes definitely. You should upload some proof like a certificate or a Letter of Appreciation pertaining to the activity you upload.
+  It should be in doc or pdf format.Additional image can also be uploaded(if any).</p>
+</div>
 
-			 </td>
-		</tr>
-		<tr>
-			<th>ROLL NO</th>
-			<td>
-				 <?php 
-  if(isset($_SESSION['username'])){
+<button class="accordion"> 5. Is there any rule for the name of the files to be uploaded?</button>
+<div class="panel">
+  <p> For uniquely attributing each file to a user,the name of the file needs to be [SerialNumber_YourRollnumber].
+   More details regarding name of the files is provided in the add new activity bar while uploading the files.</p>
+</div>
 
- 	$usersData = getUsersData(getId($_SESSION['username']));
- 
-   
-
-echo $usersData['rollno']; 
-}
-?>
-
-
-
-			 </td>
-		</tr>
-		<tr>
-			<th>SEMESTER</th>
-			<td>
-				 <?php 
-  if(isset($_SESSION['username'])){
-
- 	$usersData = getUsersData(getId($_SESSION['username']));
- 
-   
-
-echo $usersData['sem']; 
-}
-?>
+<button class="accordion">   6. What if I need to see my classmates uplaods?</button>
+<div class="panel">
+  <p>  There is a menu of the left side of the page with the title "View". It displays various entries done by different users.</p>
+</div>
 
 
+</article>
 
-			 </td>
-		</tr>
-		<tr>
-			<th>DIVISION</th>
-			<td>
-				 <?php 
-  if(isset($_SESSION['username'])){
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    
+  </main>
+</div>
+<!--<h2 style="font-size: 28px;margin-left: 492px;" class="heading">Student Achievements</h2>
+   <div class="w3-content w3-section" style=" max-width: 481px;margin-left: 432px;margin-top: -1px;" >
+  <img class="mySlides" src="slideshow/1.jpg" style="width:400%">
+  <img class="mySlides" src="slideshow/2.jpg" style="width:400%">
+  <img class="mySlides" src="slideshow/3.jpeg" style="width:400%">
+  <img class="mySlides" src="slideshow/4.jpg" style="width:400%">
+  <img class="mySlides" src="slideshow/5.jpeg" style="width:400%">
+  <img class="mySlides" src="slideshow/6.jpeg" style="width:400%">
+</div>-->
+<center>
+ <footer>
+<h3 style="margin-top:5px;"> For any further queries Email us at admin@somaiya.edu</h3>
+<a href="feedback_s.php" style="font-size: 20px;margin-top:-5px;">Click here for feedback / queries </a>
+</footer>
 
- 	$usersData = getUsersData(getId($_SESSION['username']));
- 
-   
-
-echo $usersData['div']; 
-}
-?>
-
-
-
-			 </td>
-		</tr>
-		
-
-
-
-
-	</table>
-	</div>
+</center>
 
 </div>
 
-</h2>
-</div>
 
+
+
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+
+<script>
+
+
+/*var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+*/
+var acc = document.getElementsByClassName("accordion");
+var j;
+
+for (j = 0; j < acc.length; j++) {
+  acc[j].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script> 
 </body>
 
 </html>
